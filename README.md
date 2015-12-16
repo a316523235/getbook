@@ -9,7 +9,7 @@
   
   2、npm install
   
-  3、node app.js 小说名称
+  3、node app.js 小说名称（示例：node app.js 上仙）
 
 # 提示
   
