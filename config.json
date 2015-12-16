@@ -1,10 +1,8 @@
 {
-    "domain": "http://www.fhxs.com/",
-    "searchId": "10414389360335061565",
-    "searchUrl": "cse/search?s={0}&q={1}",
-    "bookIndex": "read/{0}/{1}/",
-    "bookChapter":"read/{0}/{1}/{2}.shtml",
-    "txtPath": "book/txt/{0}/{1}.txt",
-    "rarPath": "book/rar/{0}/{1}.rar",
-    "configPath": "book/config/{0}.json"
+  "domain": "http://www.fhxs.com",
+  "searchId": "10414389360335061565",
+  "searchUrl": "http://so.fhxs.com/cse/search?s={0}&q={1}",
+  "isUseCache": true,
+  "nextMinite": 5,
+  "isInit": false
 }

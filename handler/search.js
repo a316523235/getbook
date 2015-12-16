@@ -1,19 +1,20 @@
-var _dic = './';
 var http = require('http');
 var cheerio = require('cheerio');
 var iconv = require('iconv-lite');
 var querystring = require('querystring');
 var fs = require('fs');
+
+//module by 316523235@qq.com
 var config = require('./../config.json')
 var string = require('./../common/string.js');
 
-exports.search = function(urlStr, isUseCache) {
+exports.search = function(requestBookName) {
 	//console.log(urlStr);
     //console.log(decodeURI(urlStr));
-    var query = querystring.parse(decodeURI(urlStr));
-    var requestBookName = query.q;
+    //var query = querystring.parse(decodeURI(urlStr));
+    //var requestBookName = query.q;
 
-    if(isUseCache && existsBookIndex(requestBookName)) {
+    if(config.isUseCache && existsBookIndex(requestBookName)) {
     	var bookIndexUrl = getBookIndex(requestBookName);
     	console.log('find cache bookName: ' + requestBookName);
 		console.log('find cache bookIndexUrl: ' + bookIndexUrl);
@@ -21,6 +22,8 @@ exports.search = function(urlStr, isUseCache) {
     	return;
     }
 
+    var urlStr = string.stringFormat(config.searchUrl, config.searchId, encodeURI(requestBookName));
+    //console.log(urlStr);
 	http.get(urlStr, function(res) {
 		var body = [];
 		res.on('data', function(chunk) {
@@ -90,7 +93,7 @@ function robot_Index(bookName, indexUrl) {
 };
 
 function GetContent(arrUrls, bookName) {
-	if(arrUrls.length < 213) { console.log('robot end'); return; } 	//测试时减下载量
+	//if(arrUrls.length < 212) { console.log('robot end'); return; } 	//测试时减下载量
 	if(arrUrls.length == 0) { console.log('robot end'); return; } 
 	//console.log('./txt/' + bookName +'/' + arrUrls[0].name + '.txt');
 
@@ -119,7 +122,7 @@ function GetContent(arrUrls, bookName) {
         	//进行下一章
         	arrUrls = arrUrls.slice(1, arrUrls.length);
         	if(arrUrls.length == 0) { console.log('robot end'); return; } 
-        	setTimeout(function() { GetContent(arrUrls, bookName) }, 1000 * 10);       
+        	setTimeout(function() { GetContent(arrUrls, bookName) }, 1000 * config.nextMinite);       
 		});
 	});
 }
