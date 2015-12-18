@@ -12,6 +12,14 @@ if(bookName == '')  {
 	return;
 }
 
+if(config.isInit) {
+	search.search(bookName);
+} else {
+	configMrg.init(function() { search.search(bookName) });
+}
+return;
+
+//以下内容首次运行有bug,改为上面的内容
 var tasks = [configMrg.init, search.search];
 async.eachSeries(tasks, function (item, callback) {
 	/*
