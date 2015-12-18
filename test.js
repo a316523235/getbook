@@ -12,7 +12,7 @@ console.log('config: ');
 console.log(config);
 */
 
-
+/*
 console.log('-------search-----');
 var config = require('./config.json');
 var configMrg = require('./handler/configMrg.js');
@@ -22,5 +22,36 @@ if(config.isInit) {
 } else {
 	configMrg.init(function() {search.search('上仙')});
 }
+*/
 
+console.log('-------bookMrg------');
+var bookMrg = require('./handler/bookMrg.js');
+console.log(bookMrg);
+bookMrg.readBookList();
+bookMrg.startRobot();
+
+/*
+console.log('-------async------');
+var async = require('async');
+function t(bookName, callback) {
+	console.log(callback);
+	console.log(bookName);
+	setTimeout(function() { t2(bookName + 2, callback); }, 1000);
+}
+
+function t2(bookName, callback) {
+	console.log(bookName);
+	if(callback && bookName == 'bug2')
+		callback('bookName can’t input ' + bookName);
+	else
+		callback();
+}
+
+var bookList = ['上仙', '上仙是个死宅', 'bug', '上人'];
+async.eachSeries(bookList, function(item, callback) {
+	t(item, callback);
+}, function(err) {
+	console.log('err: ' + err);
+});
+*/
 
