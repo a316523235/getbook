@@ -42,6 +42,8 @@
   1、一次指下载多本小说
   
   2、整本小说下载完后，将所有.txt文件打包为rar文件
+  
+  3、添加选择范围，目前的思路是加两个可选参数  启始章节、章节数量 (Issue by cnodejs.org [ystyle](https://cnodejs.org/user/ystyle))
 
 # update 
   
