@@ -6,6 +6,8 @@ var config = require('./config.json');
 var configMrg = require('./handler/configMrg.js');
 var bookMrg = require('./handler/bookMrg.js');
 
+//bookMrg.readBookList();
+//return;
 //新版，直接把小说名称放在robotBook.txt中就可以(小说间换行)
 if(config.isInit) {
 	bookMrg.readBookList();
