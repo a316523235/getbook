@@ -55,3 +55,19 @@ async.eachSeries(bookList, function(item, callback) {
 });
 */
 
+/*
+var http = require('http');
+http.get('http://www.baidu.com/', function(res) {
+	var body = [];
+	res.on('data', function(chunk) {
+		body.push(chunk);
+	});
+	res.on('end', function(chunk) {
+		//todo
+		console.log('也到这最')
+	});
+}).setTimeout(1000, function(){
+  console.log('timeout!');
+});
+*/
+

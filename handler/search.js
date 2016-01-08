@@ -14,6 +14,8 @@ exports.search = function(requestBookName) {
     //var query = querystring.parse(decodeURI(urlStr));
     //var requestBookName = query.q;
 
+    console.log(config);
+
     if(config.isUseCache && existsBookIndex(requestBookName)) {
     	var bookIndexUrl = getBookIndex(requestBookName);
     	console.log('find cache bookName: ' + requestBookName);
@@ -103,6 +105,8 @@ function GetContent(arrUrls, bookName) {
     	GetContent(arrUrls, bookName);
     	return;
 	}
+
+	console.log(arrUrls[0]);
 
 	http.get(arrUrls[0].url, function(res) {
 		var body = [];

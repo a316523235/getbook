@@ -64,3 +64,7 @@
   2、范围不是很理想，由于抓取的网站章节是不是按顺序排的，所以并不能下载实际的章节， 更新此功能主要是为了后期让程序能分范围下载，这样多个用户同时请求不同的小说时，不用等待太久就可以查看。
   
   3、小说配置由robotBook.txt改到 robotBook.json， 其中bookName必填，start、len为可选参数
+
+  2016-01-08 12:00
+
+  1、添加超时判断 (technical support by cnodejs.org [hustxiaoc](https://cnodejs.org/userhustxiaoc)) 

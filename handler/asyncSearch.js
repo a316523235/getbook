@@ -54,6 +54,8 @@ exports.search = function(robotBook, callback) {
 			createBookIndex(robotBook.bookName, bookIndexUrl);
 			robot_Index(robotBook, bookIndexUrl, callback);
 		});
+	}).setTimeout(1000, function(){
+	  console.log('timeout!');
 	});
 };
 
@@ -89,6 +91,8 @@ function robot_Index(robotBook, indexUrl, callback) {
 			else
 				callback();
 		});
+	}).setTimeout(1000, function(){
+	  console.log('timeout!');
 	});
 };
 
@@ -132,6 +136,8 @@ function GetContent(arrUrls, realyRobotBook, callback) {
         		setTimeout(function() { GetContent(arrUrls, realyRobotBook, callback) }, 1000 * config.nextMinite); 
 			}
 		});
+	}).setTimeout(1000, function(){
+	  console.log('timeout!');
 	});
 }
 
