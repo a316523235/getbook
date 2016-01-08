@@ -67,4 +67,4 @@
 
   2016-01-08 12:00
 
-  1、添加超时判断 (technical support by cnodejs.org [hustxiaoc](https://cnodejs.org/userhustxiaoc)) 
+  1、添加超时判断 (technical support by cnodejs.org [hustxiaoc](https://cnodejs.org/user/hustxiaoc)) 
